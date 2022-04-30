@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+
+}
+
+#header {
+   height: 4.5rem;
+}
+
+.logo {
+
+}
+
+.container {
+  width: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+body {
+  background: hsl(159, 38%, 67%);
+}
