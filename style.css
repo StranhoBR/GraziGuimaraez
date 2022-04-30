@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -19,10 +23,10 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 159;
+  --hue: 27;
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 36% 57%);
-  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color: hsl(var(--hue) 100% 50%);
+  --base-color-second: hsl(var(--hue) 95% 80%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 46%);
@@ -38,7 +42,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
@@ -97,13 +101,11 @@ h1 {
   width: 100%;
 }
 
-nav {
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+main {
+  margin-top: calc(var(--header-height) + 2rem);
 }
+
+/*====  LOGO ============================ */
 
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
@@ -114,9 +116,81 @@ nav {
   color: var(--base-color);
 }
 
-main {
-  margin-top: var(--header-height);
+/*====  NAVIGATION ============================ */
+
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
+
+nav ul li {
+  text-align: center;
+}
+
+nav li a {
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav li a:hover {
+  color: var(--base-color);
+}
+
+nav li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: widht 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* MOSTRAR MENU */
+
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center;
+}
+
+/* nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+*/
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
 
 /*====  HOME ============================ */
 #home {
