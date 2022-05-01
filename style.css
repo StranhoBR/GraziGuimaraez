@@ -35,6 +35,10 @@ img {
 }
 
 /*====  BASE ============================ */
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -122,12 +126,27 @@ body {
   width: 100%;
 }
 
+#header.scroll {
+  background: var(--base-color);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+}
+
+#header.scroll .logo span{
+  color: white;
+  transition: 0.2s;
+}
+
+#header.scroll .icon-menu{
+  color: white;
+  transition: 0.2s;
+}
+
 main {
   margin-top: calc(var(--header-height) + 2rem);
 }
 
 /*====  LOGO ============================ */
-
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -138,7 +157,6 @@ main {
 }
 
 /*====  NAVIGATION ============================ */
-
 nav {
   height: var(--header-height);
   display: flex;
@@ -181,10 +199,15 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul{
+  display: none;
 }
 
 /* MOSTRAR MENU */
-
 nav.show .menu {
   opacity: 1;
   visibility: visible;
@@ -202,11 +225,9 @@ nav.show .menu {
   place-content: center;
 }
 
-/* nav.show .menu {
+nav.show .menu ul {
   display: grid;
-  place-content: center;
 }
-*/
 
 nav.show ul.grid {
   gap: 4rem;
@@ -224,13 +245,14 @@ nav .icon-close {
   opacity: 0;
 
   position: absolute;
+  top: -1.5rem;
   right: 1.5rem;
-  /* transicao do botao */
 }
 
 nav.show div.icon-close {
   visibility: visible;
   opacity: 1;
+  top: 1.5rem;
 }
 
 
@@ -282,7 +304,8 @@ nav.show div.icon-close {
   margin-bottom: 2rem;
 }
 
-/* ==== ABAUT ======= */
+
+/*====  ABAUT ============================ */
 #abaut {
   background: white;
 }
@@ -320,5 +343,27 @@ nav.show div.icon-close {
   margin-right: 1.5rem;
 }
 
+/*====  SERVICES ============================ */
+.cards.grid {
+  gap: 1.5rem;
+}
 
-/* TESTE DE COMMIT NO GIT */
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0red, 0, 0, 0.08) ;
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: center;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
