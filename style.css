@@ -23,10 +23,10 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 27;
+  --hue: 159;
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 100% 50%);
-  --base-color-second: hsl(var(--hue) 95% 80%);
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 46%);
@@ -34,8 +34,8 @@ img {
   --body-color: hsl(0 0% 98%);
 }
 
-/*====  BASE ============================ */
-html{
+/*===  BASE ============================ */
+html {
   scroll-behavior: smooth;
 }
 
@@ -101,7 +101,7 @@ body {
   padding: 5rem 0;
 }
 
-.section .title{
+.section .title {
   margin-bottom: 1rem;
 }
 
@@ -127,19 +127,7 @@ body {
 }
 
 #header.scroll {
-  background: var(--base-color);
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
-  transition: 0.2s;
-}
-
-#header.scroll .logo span{
-  color: white;
-  transition: 0.2s;
-}
-
-#header.scroll .icon-menu{
-  color: white;
-  transition: 0.2s;
 }
 
 main {
@@ -169,16 +157,16 @@ nav ul li {
   text-align: center;
 }
 
-nav li a {
+nav ul li a {
   transition: color 0.2s;
   position: relative;
 }
 
-nav li a:hover {
+nav ul li a:hover {
   color: var(--base-color);
 }
 
-nav li a::after {
+nav ul li a::after {
   content: '';
   width: 0%;
   height: 2px;
@@ -188,12 +176,11 @@ nav li a::after {
   left: 0;
   bottom: -1.5rem;
 
-  transition: widht 0.2s;
+  transition: width 0.2s;
 }
 
 nav ul li a:hover::after {
   width: 100%;
-
 }
 
 nav .menu {
@@ -203,11 +190,11 @@ nav .menu {
   transition: 0.2s;
 }
 
-nav .menu ul{
+nav .menu ul {
   display: none;
 }
 
-/* MOSTRAR MENU */
+/* Mostrar menu */
 nav.show .menu {
   opacity: 1;
   visibility: visible;
@@ -233,7 +220,7 @@ nav.show ul.grid {
   gap: 4rem;
 }
 
-/*==== TOGGLE MENU ====================== */
+/* toggle menu */
 .toggle {
   color: var(--base-color);
   font-size: 1.5rem;
@@ -247,6 +234,8 @@ nav .icon-close {
   position: absolute;
   top: -1.5rem;
   right: 1.5rem;
+
+  transition: 0.2s;
 }
 
 nav.show div.icon-close {
@@ -254,7 +243,6 @@ nav.show div.icon-close {
   opacity: 1;
   top: 1.5rem;
 }
-
 
 /*====  HOME ============================ */
 #home {
@@ -304,21 +292,20 @@ nav.show div.icon-close {
   margin-bottom: 2rem;
 }
 
-
-/*====  ABAUT ============================ */
-#abaut {
+/*====  ABOUT ============================ */
+#about {
   background: white;
 }
 
-#abaut .container {
+#about .container {
   margin: 0;
 }
 
-#abaut .image {
+#about .image {
   position: relative;
 }
 
-#abaut .image::before {
+#about .image::before {
   content: '';
   height: 100%;
   width: 100%;
@@ -329,16 +316,16 @@ nav.show div.icon-close {
   z-index: 0;
 }
 
-#abaut .image img {
+#about .image img {
   position: relative;
 }
 
-#abaut .image img,
-#abaut .image::before {
+#about .image img,
+#about .image::before {
   border-radius: 0.25rem;
 }
 
-#abaut .text {
+#about .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -350,16 +337,16 @@ nav.show div.icon-close {
 
 .card {
   padding: 3.625rem 2rem;
-  box-shadow: 0px 0px 12px rgba(0red, 0, 0, 0.08) ;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
-  border-radius: center;
+  border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
 }
 
 .card i {
   display: block;
   margin-bottom: 1.5rem;
-  font-size: 4rem;
+  font-size: 5rem;
   color: var(--base-color);
 }
 
