@@ -23,9 +23,9 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 20;
+  --hue: 159;
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 100% 57%);
+  --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
@@ -35,7 +35,8 @@ img {
 
   /* fonts */
   --title-font-size: 1.875rem;
-  --subtile-font-size: 1rem;
+  --subtitle-font-size: 1rem;
+
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
 }
@@ -112,7 +113,7 @@ body {
 }
 
 .section .subtitle {
-  font-size: var(--subtile-font-size);
+  font-size: var(--subtitle-font-size);
 }
 
 .section header {
@@ -172,7 +173,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
@@ -189,7 +191,8 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
@@ -483,8 +486,12 @@ footer i {
   color: var(--text-color-light);
 }
 
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
 footer .social a {
-  margin-right: 2rem;
   transition: 0.3s;
   display: inline-block;
 }
@@ -524,73 +531,130 @@ footer .social a:hover {
 /*========= MEDIA QUERIES =========*/
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
+  /* reusable classes */
   .container {
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
   }
 
-.section {
-  padding: 10rem 0;
-}
+  .section {
+    padding: 10rem 0;
+  }
 
-.button {
-  height: 3.125rem;
-}
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-nav .menu {
-  opacity: 1;
-  visibility: visible;
-  top: 0;
-}
+  .button {
+    height: 3.125rem;
+  }
 
-nav .menu ul li a.title {
-  font: 700 1rem var(--body-font);
-}
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
 
-nav .icon-menu {
-  display: none;
-}
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
 
-nav .menu ul {
-  display: flex;
-  gap: 2rem;
-}
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
 
-main {
-  margin-top: var(--header-height);
-}
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
 
-#home .container {
-  grid-auto-flow: column;
-  width: fit-content;
-  justify-content: space-between;
-  margin: 0 auto;
-}
+  nav .icon-menu {
+    display: none;
+  }
 
-#home .image {
-  order: 1;
-}
+  /* layout */
+  main {
+    margin-top: var(--header-height);
+  }
 
-#home .text {
-  order: 0;
-  max-width: 24rem;
-  text-align: left;
-}
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 
-#abaut .container {
-  margin: 0 auto;
-  grid-auto-flow: column;
-}
+  #home .image {
+    order: 1;
+  }
 
-}
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
 
+  /* about */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  /* services */
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* testimonials */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  /* footer */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
 /* large devices: 1023 > */
 /* large devices: 992 > */
 @media (min-width: 992px) {
   :root {
     --title-font-size: 2.25rem;
-    --subtile-font-size: 1.125rem;
+    --subtitle-font-size: 1.125rem;
   }
 }
 /* medium devices: 767 > */
