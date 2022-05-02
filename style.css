@@ -23,7 +23,7 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 15;
+  --hue: 20;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 100% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
@@ -32,6 +32,9 @@ img {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
 }
 
 /*===  BASE ============================ */
@@ -47,7 +50,7 @@ body {
 }
 
 .title {
-  font: 700 1.875rem 'Poppins', sans-serif;
+  font: 700 var(--title-font-size) 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -465,7 +468,7 @@ footer .logo {
 
 footer .brand p {
   color: var(--text-color-light);
-  margin-bottom: 00.75rem;
+  margin-bottom: 0.75rem;
 }
 
 footer i {
@@ -483,10 +486,10 @@ footer .social a:hover {
   transform: translateY(-8px);
 }
 
-/*====  BACK TO TOP ============================ */
+/* Back to top */
 .back-to-top {
   background: var(--base-color);
-  color: white;
+  color: var(--text-color-light);
 
   position: fixed;
   right: 1rem;
@@ -510,3 +513,15 @@ footer .social a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/*========= MEDIA QUERIES =========*/
+/* extra large devices: 1200 > */
+
+/* large devices: 1023 > */
+/* large devices: 992 > */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.2rem;
+  }
+}
+/* medium devices: 767 > */
