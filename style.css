@@ -23,9 +23,9 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 20;
+  --hue: 159;
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 66% 57%);
+  --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
@@ -385,11 +385,11 @@ nav.show div.icon-close {
 }
 
 #testimonials blockquote p span {
-font: 700 2.5rem sefif;
-position: absolute;
-top: -0.375rem;
-left: -1.875rem;
-color: var(--base-color);
+  font: 700 2.5rem serif;
+  position: absolute;
+  top: -0.375rem;
+  left: -1.875rem;
+  color: var(--base-color);
 }
 
 #testimonials cite {
@@ -406,7 +406,7 @@ color: var(--base-color);
   margin-right: 0.5rem;
 }
 
-/*====  swiper ============================ */
+/* swiper */
 .swiper-slide {
   height: auto;
   padding: 4rem 1rem;
@@ -421,7 +421,7 @@ color: var(--base-color);
   background: var(--base-color);
 }
 
-/*====  TESTIMONIALS ============================ */
+/*====  CONTACT ============================ */
 #contact .grid {
   gap: 4rem;
 }
@@ -433,7 +433,7 @@ color: var(--base-color);
 #contact .button i,
 #contact ul li i {
   font-size: 1.5rem;
-  margin-right: 0.65rem;
+  margin-right: 0.625rem;
 }
 
 #contact ul.grid {
