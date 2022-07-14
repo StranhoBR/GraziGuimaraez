@@ -364,6 +364,14 @@ nav.show div.icon-close {
   color: var(--base-color);
 }
 
+.card span {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+
 .card .title {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
